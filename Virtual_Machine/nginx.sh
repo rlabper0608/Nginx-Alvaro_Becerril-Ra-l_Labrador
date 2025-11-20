@@ -17,7 +17,7 @@ chown -R www-data:www-data /var/www/alvaro/html
 
 chmod -R 755 /var/www/alvaro
 
-cp /vagrant/Virtual_Machine/alvaro /etc/nginx/sites-available/alvaro
+cp /vagrant/alvaro /etc/nginx/sites-available/alvaro
 
 ln -s /etc/nginx/sites-available/alvaro /etc/nginx/sites-enabled/
 
