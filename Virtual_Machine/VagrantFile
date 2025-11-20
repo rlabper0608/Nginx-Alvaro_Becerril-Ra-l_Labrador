@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bullseye64"
+  config.ssh.insert_key= false
+
+
+  config.vm.define "nginx" do |debian|
+     debian.vm.hostname="debian"
+     debian.vm.network "private_network",ip: "192.168.56.10"
+     debian.vm.provision "shell",path: "nginx.sh"
+  end
+end
