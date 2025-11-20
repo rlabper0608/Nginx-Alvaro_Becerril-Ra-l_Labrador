@@ -34,3 +34,36 @@ Ahora solo tenemos que comprobar que el contenedor se este ejecutando
 
 Y ver los logs del contenedor
 ![VagrantFile](img/Docker-img/contendor-logs.png)
+
+5. Comprobación del correcto funcionamiento
+Aquí podemos ver la como la página carga perfectamente desde el localhost.
+![VagrantFile](img/Docker-img/comprobacion-funcionando.png)
+
+5.1.1 Editar archivo hosts
+Vamos a editar el archivo hosts, para que el localhost apunte a la ip de nuestro servidor
+![VagrantFile](img/Docker-img/editar-hosts.png)
+
+5.2 Comprobar registros del servidor
+Como podemos ver no tenemos ningún problema con los registros de nuestro servidor y todo funciona correctamente.
+![VagrantFile](img/Docker-img/comprobar-registros.png)
+
+6.Gestión del contenedor
+Vamos a ver los diferentes comandos de gestión de nuestro contenedor, como son stop, restart y rm
+![VagrantFile](img/Docker-img/gestion-stop.png)
+![VagrantFile](img/Docker-img/gestion-restart.png)
+![VagrantFile](img/Docker-img/gestion-rm.png)
+
+7. Alternativa: Usando Docker Compose
+Esta sección aunque es una alternativa, queríamos hacerla también para seguir práticando con el composer.yml de Docker.
+
+Lo primero que tenemos que hacer es crear el archivo docker-compose.yml
+
+![VagrantFile](img/Docker-img/docker-compose.png)
+
+Una vez que lo tenemos, tenemos que añadirle la configuración necesaria para que funcione perfectamente.
+![VagrantFile](img/Docker-img/docker-conf.png)
+
+Una vez que lo tenemos, simplemente es levantarlo, ver sus logs si lo queremos y cuando queramos pararlo.
+![VagrantFile](img/Docker-img/composer-up.png)
+![VagrantFile](img/Docker-img/composer-logs.png)
+![VagrantFile](img/Docker-img/composer-down.png)
