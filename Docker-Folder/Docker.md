@@ -52,3 +52,18 @@ Vamos a ver los diferentes comandos de gestión de nuestro contenedor, como son 
 ![VagrantFile](img/Docker-img/gestion-stop.png)
 ![VagrantFile](img/Docker-img/gestion-restart.png)
 ![VagrantFile](img/Docker-img/gestion-rm.png)
+
+7. Alternativa: Usando Docker Compose
+Esta sección aunque es una alternativa, queríamos hacerla también para seguir práticando con el composer.yml de Docker.
+
+Lo primero que tenemos que hacer es crear el archivo docker-compose.yml
+
+![VagrantFile](img/Docker-img/docker-compose.png)
+
+Una vez que lo tenemos, tenemos que añadirle la configuración necesaria para que funcione perfectamente.
+![VagrantFile](img/Docker-img/docker-conf.png)
+
+Una vez que lo tenemos, simplemente es levantarlo, ver sus logs si lo queremos y cuando queramos pararlo.
+![VagrantFile](img/Docker-img/composer-up.png)
+![VagrantFile](img/Docker-img/composer-logs.png)
+![VagrantFile](img/Docker-img/composer-down.png)
