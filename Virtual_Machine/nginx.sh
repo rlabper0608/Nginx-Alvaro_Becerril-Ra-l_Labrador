@@ -4,7 +4,7 @@ set -xeu
 
 apt-get update
 
-apt-get install nginx
+apt-get -y install nginx
 
 mkdir -p /var/www/alvaro/html
 
