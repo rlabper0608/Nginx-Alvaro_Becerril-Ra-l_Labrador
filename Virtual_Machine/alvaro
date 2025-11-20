@@ -3,7 +3,7 @@ server {
         listen [::]:80;
         root /var/www/alvaro/html/static-website-example;
         index index.html index.htm index.nginx-debian.html;
-        server_name example.test;
+        server_name 192.168.56.10.alvaro.nip.io;
         location / {
                 try_files $uri $uri/ =404;
         }
