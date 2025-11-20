@@ -17,5 +17,7 @@ chown -R www-data:www-data /var/www/alvaro/html
 
 chmod -R 755 /var/www/alvaro
 
+cp /vagrant/Virtual_Machine/alvaro /etc/nginx/sites-available/alvaro
+
 
 systemctl status nginx

@@ -2,7 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/bullseye64"
+  # Alvaro: He cambiado el SO de la máquina virtual ya que daba problemas con la interfaz de red
+  # Ya que vagrant intenta levantar la interfaz eth1 con ifup pero debian/bullseye 64 usa NetworkManager
+  config.vm.box = "bento/debian-11"
   config.ssh.insert_key= false
 
 
