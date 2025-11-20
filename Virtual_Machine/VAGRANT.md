@@ -1,4 +1,4 @@
-Instalación y provisión de una máquina virtual con servidor:
+Esta parte de la práctica la ha realizado Álvaro Becerril Robles, obviamente Raúl Labrador también ha participado y observado el proceso, pero lo que es realizar la escritura de los comandos, la configuración y este Readme ha sido realizado por Álvaro.
 
 ## · Índice
 
