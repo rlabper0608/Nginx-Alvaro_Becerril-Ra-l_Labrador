@@ -34,3 +34,21 @@ Ahora solo tenemos que comprobar que el contenedor se este ejecutando
 
 Y ver los logs del contenedor
 ![VagrantFile](img/Docker-img/contendor-logs.png)
+
+5. Comprobación del correcto funcionamiento
+Aquí podemos ver la como la página carga perfectamente desde el localhost.
+![VagrantFile](img/Docker-img/comprobacion-funcionando.png)
+
+5.1.1 Editar archivo hosts
+Vamos a editar el archivo hosts, para que el localhost apunte a la ip de nuestro servidor
+![VagrantFile](img/Docker-img/editar-hosts.png)
+
+5.2 Comprobar registros del servidor
+Como podemos ver no tenemos ningún problema con los registros de nuestro servidor y todo funciona correctamente.
+![VagrantFile](img/Docker-img/comprobar-registros.png)
+
+6.Gestión del contenedor
+Vamos a ver los diferentes comandos de gestión de nuestro contenedor, como son stop, restart y rm
+![VagrantFile](img/Docker-img/gestion-stop.png)
+![VagrantFile](img/Docker-img/gestion-restart.png)
+![VagrantFile](img/Docker-img/gestion-rm.png)
