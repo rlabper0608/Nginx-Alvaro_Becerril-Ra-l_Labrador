@@ -1,3 +1,17 @@
-# Nginx-Alvaro_Becerril-Raul_Labrador
+# Práctica: Nginx: instalación y configuración de Servidor Web
 
-En este repositorio vamos a realizar la práctica de "Nginx I: Instalación y configuración de servidor webTarea"
+En esta práctica hemos implementado un servidor NGINX tanto en **Vagrant** como con **Docker**.
+
+La parte de Vagrant la ha realizao Álvaro Becerril mientras que de Docker se ha encargado Raúl Labrador
+
+---
+
+## Herramientas necesarias
+
+- 💻 **IDE**: Visual Studio Code.
+- 📦 **Vagrant**
+- 📀 **Docker**
+
+> 💡 **Consejo:** No es obligatorio, pero se recomienda usar un sistema de control de versiones. En nuestro caso utilizamos  **Git** y **GitHub** para gestionar el proyecto.
+
+---
