@@ -9,7 +9,7 @@ Es por esto que en esta parte example.test pasa a ser raul.test
 ## 2. Instalación de Docker
 
 Como esta práctica ha sido realizada en mi portatil (Windows 11), el cuál es el que uso para clase ya tenía instaldo Docker.
-![VagrantFile](/Nginx-Alvaro_Becerril-Ra-l_Labrador/img/Docker-img/version.png)
+![VagrantFile](/img/Docker-img/version.png)
 
 ## 3. Creación de la estructura de carpetas del sitio web
 Como indica en el pdf, tenemos que crear dos carpetas, por tanto he copiado los comandos tal cual
