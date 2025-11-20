@@ -43,7 +43,7 @@ Por último asignamos que el owner y su grupo sean www-data y que sus permisos, 
 Para configurar correctamente el servidor deberemos crear un archivo de configuración, para no modificar el que viene por defecto, y meteremos un 
 bloque de servidor con las directivas correctas:
 
-![Configuración Nginx](/img/4.nginx_conf.png)
+![Configuración Nginx](/img/4.Nginx_conf.png)
 
 Debemos de cambiar la directiva root por la ruta absoluta donde estará nuestra página web desplegada, en mi caso, es en la siguiente carpeta:
 
