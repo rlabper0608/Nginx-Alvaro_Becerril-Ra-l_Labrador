@@ -1,8 +1,10 @@
-# Práctica: Nginx: instalación y configuración de Servidor Web
+# Nginx: instalación y configuración de Servidor Web
 
 En esta práctica hemos implementado un servidor NGINX tanto en **Vagrant** como con **Docker**.
 
-La parte de Vagrant la ha realizao Álvaro Becerril mientras que de Docker se ha encargado Raúl Labrador
+La parte de Vagrant la ha realizado Álvaro Becerril mientras que de Docker se ha encargado Raúl Labrador.
+
+En la carpeta Virtual_Machine se encuentra la documentación y la automatización de la MV, mientras que en la carpeta Docker-Folder veremos la documentación  de Docker y su respectivo .yml
 
 ---
 
