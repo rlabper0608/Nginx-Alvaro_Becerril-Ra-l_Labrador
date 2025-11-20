@@ -2,13 +2,12 @@ Instalación y provisión de una máquina virtual con servidor:
 
 ## · Índice
 
-1. [Instalación servidor Nginx](#instalación)
-2. [Comandos utilizados](#comandos-utilizados-en-el-proyecto)
-   - [Comandos de Vagrant (Terminal local)](#comandos-de-vagrant-terminal-local)
-   - [Comandos de Linux (Terminal remota)](#comandos-de-linux-terminal-remota)
-   - [Comandos para verificación](#comandos-para-verificación)
-3. [Ejecución del proyecto](#ejecución-del-proyecto)
-
+1. [Instalación servidor Nginx](#1instalación-del-servidor-nginx)
+2. [Creación de las carpetas del sitio web](#2creación-de-las-carpetas-del-sitio-web)
+3. [Configuración de Servidor NGINX](#3configuración-de-servidor-nginx)
+4. [Comprobaciones del servicio NGINX](#4comprobaciones-del-servicio-nginx)
+    - [Archivo /etc/hosts](#41-archivo-etchosts)
+    - [Utilizando nip.io](#42-utilizando-nipio)
 ---
 
 ### 1.Instalación del servidor Nginx.
