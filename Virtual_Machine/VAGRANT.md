@@ -13,10 +13,10 @@ Esta parte de la práctica la ha realizado Álvaro Becerril Robles, obviamente R
    - [Configuración del sitio web](#53-configuración-del-sitio-web)
    - [Comprobación de autenticación](#54-comprobación-de-autenticación)
    - [Tareas](#55-tareas)
-     - [Tarea 1 – Logs de autenticación](#tarea-1--logs-de-autenticación)
-     - [Tarea 2 – Autenticación en contacthtml](#tarea-2--autenticación-en-contacthtml)
-     - [Tarea 3 – Bloqueo por IP de la máquina anfitriona](#tarea-3--bloqueo-por-ip-de-la-máquina-anfitriona)
-     - [Tarea 4 – Requerir IP válida y usuario/contraseña](#tarea-4--requerir-ip-válida-y-usuariocontraseña)
+     - [Tarea 1 – Logs de autenticación](#tarea-1)
+     - [Tarea 2 – Autenticación en contacthtml](#tarea-2)
+     - [Tarea 3 – Bloqueo por IP de la máquina anfitriona](#tarea-3)
+     - [Tarea 4 – Requerir IP válida y usuario/contraseña](#tarea-4)
 
 
 ### 1.Instalación del servidor Nginx.
