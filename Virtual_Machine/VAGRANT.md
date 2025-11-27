@@ -8,6 +8,7 @@ Esta parte de la práctica la ha realizado Álvaro Becerril Robles, obviamente R
 4. [Comprobaciones del servicio NGINX](#4comprobaciones-del-servicio-nginx)
     - [Archivo /etc/hosts](#41-archivo-etchosts)
     - [Utilizando nip.io](#42-utilizando-nipio)
+5. [Autentificación ssl]
 ---
 
 ### 1.Instalación del servidor Nginx.
@@ -91,6 +92,36 @@ del nombre del servidor y .nip.io;
 Ahora, en nuestro navegador, metemos el servername y nos saldrá el index.html del repositorio clonado :
 
 ![Web utilizadno nip.io](/img/8.Nip.io.png)
+
+### 5.Autenticación en Nginx
+
+Para comenzar con la autenticación, primero deberemos instalar el paquete openssl
+
+En nginx.sh agregamos a esta linea la setencia "openssl":
+
+```bash
+   apt-get -y install nginx git openssl
+```
+
+### 5.2 Creación de usuarios y contraseñas
+
+Agregaremos a nginx.sh las siguientes sentencias :
+
+![Usuarios y Contraseñas](/img/9.usuarios.png)
+
+Con la primera sentencia estamos creando un usuario, donde 'alvaro' es dicho nombre de usuario.
+En la segunda sentencia le asignamos una contraseña, en mi caso, 'alvaropass'
+
+He creado 2 usuarios con su respectiva contraseña, toda esta información se almacena en un archivo oculto llamado 
+.htpasswd. Dicho archivo se creará automaticamente con la redirección ">>"
+
+Comprobamos que se han creado correctamente haciendo un cat a dicho archivo:
+
+![Lista usuarios](/img/10.Listado_usuarios.png)
+
+
+
+
 
 
 
