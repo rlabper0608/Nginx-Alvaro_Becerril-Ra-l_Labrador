@@ -136,4 +136,3 @@ Tenemos que cambiar el archivo de configuración para que el acceso solo sea pos
 ![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-3.png)
 
 Básicamente es muy parecido a lo que teniamos antes, donde estamos filtrando las IP y seguimos teniendo la línea de autenticación de usuarios y contraseñas.
-![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-4.png)
