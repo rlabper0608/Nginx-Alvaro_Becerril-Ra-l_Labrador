@@ -24,7 +24,7 @@ chmod -R 755 /var/www/alvaro
 
 cp /vagrant/alvaro /etc/nginx/sites-available/alvaro
 
-ln -s /etc/nginx/sites-available/alvaro /etc/nginx/sites-enabled/
+ln -sf /etc/nginx/sites-available/alvaro /etc/nginx/sites-enabled/
  
 
 systemctl restart nginx

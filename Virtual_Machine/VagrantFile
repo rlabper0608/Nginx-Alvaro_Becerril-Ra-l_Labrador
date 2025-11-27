@@ -12,6 +12,6 @@ Vagrant.configure("2") do |config|
      debian.vm.hostname="debian"
      debian.vm.network "private_network",ip: "192.168.56.10"
      debian.vm.provision "shell",path: "nginx.sh"
-     debian.vm.synced_folder "./html", "/var/www/html"
+     debian.vm.synced_folder "./html", "/var/www/alvaro/html"
   end
 end
