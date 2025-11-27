@@ -1,15 +1,23 @@
 Esta parte de la práctica la ha realizado Álvaro Becerril Robles, obviamente Raúl Labrador también ha participado y observado el proceso, pero lo que es realizar la escritura de los comandos, la configuración y este Readme ha sido realizado por Álvaro.
+## Índice
 
-## · Índice
+1. [Instalación servidor Nginx](#1-instalación-del-servidor-nginx)
+2. [Creación de las carpetas del sitio web](#2-creación-de-las-carpetas-del-sitio-web)
+3. [Configuración de Servidor NGINX](#3-configuración-de-servidor-nginx)
+4. [Comprobaciones del servicio NGINX](#4-comprobaciones-del-servicio-nginx)
+   - [Archivo /etc/hosts](#41-archivo-etchosts)
+   - [Utilizando nip.io](#42-utilizando-nipio)
+5. [Autenticación en Nginx](#5-autenticación-en-nginx)
+   - [Instalación de openssl](#51-instalación-de-openssl)
+   - [Creación de usuarios y contraseñas](#52-creación-de-usuarios-y-contraseñas)
+   - [Configuración del sitio web](#53-configuración-del-sitio-web)
+   - [Comprobación de autenticación](#54-comprobación-de-autenticación)
+   - [Tareas](#55-tareas)
+     - [Tarea 1 – Logs de autenticación](#tarea-1--logs-de-autenticación)
+     - [Tarea 2 – Autenticación en contacthtml](#tarea-2--autenticación-en-contacthtml)
+     - [Tarea 3 – Bloqueo por IP de la máquina anfitriona](#tarea-3--bloqueo-por-ip-de-la-máquina-anfitriona)
+     - [Tarea 4 – Requerir IP válida y usuario/contraseña](#tarea-4--requerir-ip-válida-y-usuariocontraseña)
 
-1. [Instalación servidor Nginx](#1instalación-del-servidor-nginx)
-2. [Creación de las carpetas del sitio web](#2creación-de-las-carpetas-del-sitio-web)
-3. [Configuración de Servidor NGINX](#3configuración-de-servidor-nginx)
-4. [Comprobaciones del servicio NGINX](#4comprobaciones-del-servicio-nginx)
-    - [Archivo /etc/hosts](#41-archivo-etchosts)
-    - [Utilizando nip.io](#42-utilizando-nipio)
-5. [Autentificación ssl]
----
 
 ### 1.Instalación del servidor Nginx.
 
