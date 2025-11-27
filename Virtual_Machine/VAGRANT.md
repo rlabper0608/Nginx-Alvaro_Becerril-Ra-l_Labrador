@@ -8,10 +8,9 @@ Esta parte de la práctica la ha realizado Álvaro Becerril Robles, obviamente R
    - [Archivo /etc/hosts](#41-archivo-etchosts)
    - [Utilizando nip.io](#42-utilizando-nipio)
 5. [Autenticación en Nginx](#5-autenticación-en-nginx)
-   - [Instalación de openssl](#51-instalación-de-openssl)
    - [Creación de usuarios y contraseñas](#52-creación-de-usuarios-y-contraseñas)
-   - [Configuración del sitio web](#53-configuración-del-sitio-web)
-   - [Comprobación de autenticación](#54-comprobación-de-autenticación)
+   - [Configuración del sitio web](#53-configuración-de-sitio-web)
+   - [Comprobación de autenticación](#54-comprobación-de-autentificación)
    - [Tareas](#55-tareas)
      - [Tarea 1 – Logs de autenticación](#tarea-1)
      - [Tarea 2 – Autenticación en contacthtml](#tarea-2)
@@ -101,7 +100,7 @@ Ahora, en nuestro navegador, metemos el servername y nos saldrá el index.html d
 
 ![Web utilizadno nip.io](/img/8.Nip.io.png)
 
-### 5.Autenticación en Nginx
+### 5 Autenticación en Nginx
 
 Para comenzar con la autenticación, primero deberemos instalar el paquete openssl
 
