@@ -130,3 +130,10 @@ Una vez que cambiamos el archivo para denegarle el acceso a nuestra IP del orden
 
 Y el error que nos encontramos en el log es el siguiente: 
 ![VagrantFile](/img/Docker-img/log-nginx-ip.png)
+
+### 3.2. T.2
+Tenemos que cambiar el archivo de configuración para que el acceso solo sea posible cuando tiene una IP válida y un usuario válido.
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-3.png)
+
+Básicamente es muy parecido a lo que teniamos antes, donde estamos filtrando las IP y seguimos teniendo la línea de autenticación de usuarios y contraseñas.
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-4.png)
