@@ -4,9 +4,16 @@ server {
   root /var/www/alvaro/html; 
   index index.html index.htm index.nginx-debian.html;
   server_name 192-168-56-10.alvaro.nip.io;
+
+  sendfile off;
   location / {
-  auth_basic "Área restringida";
-  auth_basic_user_file /etc/nginx/.htpasswd;
+  deny 192.68.56.10
   try_files $uri $uri/ =404;
+  }
+
+   location /contact.html {
+   auth_basic "Área restringida";
+   auth_basic_user_file /etc/nginx/.htpasswd;
+   try_files $uri $uri/ =404;
   }
 }
