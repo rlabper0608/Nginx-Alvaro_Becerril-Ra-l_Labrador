@@ -122,3 +122,11 @@ Ahora tenemos que combinar la restricción de Up y la autenticación HTTP con la
 
 ## 3. Tareas
 ### 3.1. T.1
+Tenemos que hacer este cambio en la configuración para poder bloquear el acceso al directorio raiz a nuestra IP;
+![VagrantFile](/img/Docker-img/bloqueo-ip.png)
+
+Una vez que cambiamos el archivo para denegarle el acceso a nuestra IP del ordenador, nos mostrara el siguiente error:
+![VagrantFile](/img/Docker-img/error-nginx-ip.png)
+
+Y el error que nos encontramos en el log es el siguiente: 
+![VagrantFile](/img/Docker-img/log-nginx-ip.png)
