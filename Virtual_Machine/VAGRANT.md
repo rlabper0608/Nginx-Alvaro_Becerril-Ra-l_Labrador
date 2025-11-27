@@ -119,6 +119,107 @@ Comprobamos que se han creado correctamente haciendo un cat a dicho archivo:
 
 ![Lista usuarios](/img/10.Listado_usuarios.png)
 
+### 5.3 Configuración de sitio web
+
+Para desplegar el sitio web en mi servidor Nginx he seguido los siguientes pasos:
+
+1. Descomprimir el zip en mi máquina anfitriona y subir la carpeta html al proyecto
+
+2. Crear un enlace blando desde la configuración de Vagrant hacia la carpeta /var/www/alvaro/html :
+
+![Sincronizar carpetas](/img/11.sync_folder.png)
+
+Así las dos carpetas quedan sincronizadas, es decir, apuntan al mismo contenido, que en mi caso es la página web completa, incluyendo css, js e imágenes.
+
+3. Modificiar la configuración de Nginx :
+
+Editaremos el archivo de configuración llamado alvaro de la siguiente manera:
+
+![Despliegue web](/img/12.despliegue_web.png)
+
+Simplemente hemos cambiado a donde apunta root, modificandolo en base a nuestra carpeta html
+
+OJO: ponemos sendfile off; ya que el mapeo de archivos nos corrompe algunas hojas de estilo o mismamente el jquery.
+
+En location estamos solicitando autenticación de usuario en la raíz ( / ), en la cual usaremos como referencia el archivo creado previamente .htpasswd
+
+### 5.4 Comprobación de autentificación
+
+Una vez accedamos desde el navegador, nos aparecerá lo siguiente:
+
+![Login](/img/13.Intento_Login.png)
+
+Al acceder a la página nos la cargará sin problemas:
+
+![WebPage](/img/14.website.png)
+
+Si rechazamos la autentificación, nos saltará el siguiente error 401:
+
+![Cancelar Login](/img/15.Cancelar_Login.png)
+
+### 5.5 Tareas
+
+#### Tarea 1
+
+Obtendremos el acceso a los logs, concretamente y en esta ocasión, en access.log.
+
+![User Logs](/img/16.Nginx_logs.png)
+
+En la primera linea vemos un Login correcto, dando como respuesta del servidor **200**.En la segunda rechazé el login, con lo que responde con error 401 con el usuario "-".
+
+En la tercera linea me inventé un usuario "robles2" y como podemos observar almacena el nombre de dicho usuario pero rechaza la conexión con el error 401.
+
+#### Tarea 2
+
+Para realizar una autenticación exclusivamente en contact.html, crearemos otra sección de location en la configuración de la siguiente manera:
+
+![Web Contact](/img/17.contact.html.png)
+
+Es muy similar a la location de la raíz, salvo que donde pone / colocamos contact.html (que es el archivo que queremos), el mensaje de autenticación es el mismo y el fichero dejamos el que hemos añadido previamente.
+
+Ahora cuando nos metamos a Contact nos pedirá la autenticación :
+
+![Contact Authe](/img/18.Contact_authentification.png)
+
+#### Tarea 3
+
+Para que no nos deje acceder con la Ip de la máquina anfitriona, primero deberemos saber la IP de esta misma.
+
+Para ello, yo que estoy en Windows, abrimos una nueva terminal (cmd) y colocaremos el comando **ipconfig**,
+el cuál nos dará la siguiente salida :
+
+![ipconfig](/img/20.ipconfig.png)
+
+Ahora dicha IPV4 la pondremos en la configuración de location con la directiva **deny** :
+
+![deny](/img/19.Bloqueo_IP.png)
+
+El navegador nos dará el siguiente error :
+
+![forbidden](/img/21.Forbidden.png)
+
+y en el error.log de Nginx nos dará lo siguiente :
+
+![errorLogs](/img/22.Error_Bloqueo_IP.png)
+
+#### Tarea 4
+
+Para que requiera autenticar la IP y el tandem usuario/contraseña usarmeos la directiva **satisfy all**, luego con **allow** permitiremos las conexiones desde nuestra IP, quedando así la configuración de Nginx:
+
+![errorLogs](/img/23.Doble_Requisito_conf.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
