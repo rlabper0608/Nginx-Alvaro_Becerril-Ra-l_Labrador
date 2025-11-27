@@ -206,7 +206,11 @@ y en el error.log de Nginx nos dará lo siguiente :
 
 Para que requiera autenticar la IP y el tandem usuario/contraseña usarmeos la directiva **satisfy all**, luego con **allow** permitiremos las conexiones desde nuestra IP, quedando así la configuración de Nginx:
 
-![errorLogs](/img/23.Doble_Requisito_conf.png)
+![Configuración en nginx para el doble requisito](/img/23.Doble_Requisito_conf.png)
+
+y en el navegador nos saldrá nuevamente la autenticación:
+
+![Intento de Login con Doble Requisito](/img/23.Doble_Requisito_conf.png)
 
 
 
