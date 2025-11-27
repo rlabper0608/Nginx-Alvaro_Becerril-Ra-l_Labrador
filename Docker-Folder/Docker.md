@@ -108,3 +108,17 @@ Ahora solo tenemos que ver la diferencia cuando nos deja entrar con un usuario y
 
 Ahora nos pide que solo salte el inicio de sesión cuando entramos a la seccion de contacto, eso lo tenemos que hacer modificando el archivo `nginx.conf` y la configuración de la siguiente manera: 
 ![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-usuario.png)
+
+### 2.2. T.2
+Tambien lo podemos hacer como indica en el **pdf**,  quitando las dos líneas que tenemos de autorización y creando una nueva para la ruta de contact
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-contacto.png)
+
+### 2.3. Combinación de la autenticacion básica con la restricción de acceso por IP
+Para esta parte tenemos que añadir la sección de código propuesta en el **pdf**, para denegar el acceso a una IP concreta y permitiendo todas las demmás.
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip.png)
+
+Ahora tenemos que combinar la restricción de Up y la autenticación HTTP con la directiva satisfy, donde si le ponemos all, se le permite el acceso al usuario si cumple ambas condiciones, y si le ponemos any, permite el acceso si cumple alguna de las dos condiciones. 
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-2.png)
+
+## 3. Tareas
+### 3.1. T.1
