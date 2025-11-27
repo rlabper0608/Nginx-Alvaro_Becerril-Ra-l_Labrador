@@ -94,7 +94,12 @@ En mi caso yo si tengo un archivo de configuración por tanto no me hace falta e
 Por tanto solo tengo que modifcar el archivo `nginx.conf` (en mi caso con un notepad y no nano) para que incluya la siguiente configuración: 
 ![VagrantFile](/img/Docker-img/nginx-conf-autenticacion.png)
 
-Una vez que lo tenemos, ejecutamos el siguiente comando: `docker run -d --name nginx-raul -p 8080:80 -v ./conf/nginx.conf:/etc/nginx/nginx.conf -v ./conf/htpasswd:/etc/nginx/.htpasswd -v ./html:/usr/share/nginx/html nginx` y vemos la respuesta que nos da. 
+Una vez que lo tenemos, ejecutamos el siguiente comando: `docker run -d --name nginx-raul -p 8080:80 -v ./conf/nginx.conf:/etc/nginx/default.conf -v ./conf/htpasswd:/etc/nginx/.htpasswd -v ./html:/usr/share/nginx/html nginx` y vemos la respuesta que nos da. 
 ![VagrantFile](/img/Docker-img/ejecutar-nginx-autenticacion.png)
 
-### 
+### 1.4 Probando la nueva configuración
+Como podemos ver al poner la url con el dns falso y el numero de puerto 8080 vemos la pagina perfectamente.
+![VagrantFile](/img/Docker-img/probar-nginx-autenticacion.png)
+
+## 2. Tareas
+### 2.1. T.1
