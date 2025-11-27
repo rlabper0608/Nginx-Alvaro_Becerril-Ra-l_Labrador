@@ -67,3 +67,34 @@ Una vez que lo tenemos, simplemente es levantarlo, ver sus logs si lo queremos y
 ![VagrantFile](/img/Docker-img/composer-up.png)
 ![VagrantFile](/img/Docker-img/composer-logs.png)
 ![VagrantFile](/img/Docker-img/composer-down.png)
+
+
+# Práctica 2.2: Autenticación en Nginx con Docker
+## 1. Introducción
+### 1.1. Lo primero que tenemos que hacer es descargarnos los paquetes que vamos a usar la segunda parte de esta práctica.
+Tenemos que descargarnos staker/ssl-certs-generator, y lo vamos a hacer con un `docker pull`
+![VagrantFile](/img/Docker-img/descargar-ssl-certs.png) 
+
+### 1.2. Creación de usuarios y contraseñas para el acceso web
+Tenemos que crear un archivo llamado `htpasswd` donde vamos a meter los usuarios y contraseñas, este archivo lo creamos dentro de la carpeta de `conf`.
+![VagrantFile](/img/Docker-img/crear-htpasswd.png)
+
+Para crear ahora la contraseña de forma no intreactica vamos a usar el siguiente comando: 
+![VagrantFile](/img/Docker-img/crear-contrasena.png)
+
+Aqui vemos la contraseña que nos ha generado.
+![VagrantFile](/img/Docker-img/contrasena-generada.png)
+
+Ahora vamos a crear otro usuario más con mi apellido y le vamos a generar una contraseña de la misma forma.
+![VagrantFile](/img/Docker-img/crear-usuario-2.png)
+
+### 1.3. Configurando el contenedor Nginx para usar autenticación básica
+En mi caso yo si tengo un archivo de configuración por tanto no me hace falta extraerlo de la imagen. Mi archivo se llama `nginx.conf` y está en la carpeta `conf`.
+
+Por tanto solo tengo que modifcar el archivo `nginx.conf` (en mi caso con un notepad y no nano) para que incluya la siguiente configuración: 
+![VagrantFile](/img/Docker-img/nginx-conf-autenticacion.png)
+
+Una vez que lo tenemos, ejecutamos el siguiente comando: `docker run -d --name nginx-raul -p 8080:80 -v ./conf/nginx.conf:/etc/nginx/nginx.conf -v ./conf/htpasswd:/etc/nginx/.htpasswd -v ./html:/usr/share/nginx/html nginx` y vemos la respuesta que nos da. 
+![VagrantFile](/img/Docker-img/ejecutar-nginx-autenticacion.png)
+
+### 
