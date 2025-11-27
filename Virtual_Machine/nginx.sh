@@ -17,7 +17,6 @@ mkdir -p /var/www/alvaro/html
 
 cd /var/www/alvaro/html
 
-git clone https://github.com/cloudacademy/static-website-example
 
 chown -R www-data:www-data /var/www/alvaro/html
 
