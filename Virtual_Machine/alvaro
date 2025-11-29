@@ -7,7 +7,7 @@ server {
   ssl_certificate /etc/ssl/certs/192-168-56-10.alvaro.nip.io.crt;
   ssl_certificate_key /etc/ssl/private/192-168-56-10.alvaro.nip.io.key;
   ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-  ssl_ciphers HIGH:!aNULL:!MD5
+  ssl_ciphers HIGH:!aNULL:!MD5;
 
   sendfile off;
   location / {
