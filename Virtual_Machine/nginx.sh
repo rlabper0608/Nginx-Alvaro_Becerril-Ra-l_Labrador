@@ -15,6 +15,12 @@ ufw delete allow 'Nginx HTTP'
 
 ufw status
 
+openssl req -x509 -nodes -days 365 \ 
+  -newkey rsa:2048 -keyout /etc/ssl/private/192-168-56-10.alvaro.nip.io.key \ 
+  -out /etc/ssl/certs/192-168-56-10.alvaro.nip.io.crt
+  -subj "/C=ES/ST=Granada/L=Granada/O=MiEmpresa/OU=IT/CN=192-168-56-10.alvaro.nip.io"
+
+
 sh -c "echo -n 'alvaro:' >> /etc/nginx/.htpasswd"
 sh -c "openssl passwd -apr1 'alvaropass'>> /etc/nginx/.htpasswd"
 

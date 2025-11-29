@@ -4,14 +4,13 @@ server {
   root /var/www/alvaro/html; 
   index index.html index.htm index.nginx-debian.html;
   server_name 192-168-56-10.alvaro.nip.io;
+  ssl_certificate /etc/ssl/certs/192-168-56-10.alvaro.nip.io.crt;
+  ssl_certificate_key /etc/ssl/private/192-168-56-10.alvaro.nip.io.key;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  ssl_ciphers HIGH:!aNULL:!MD5
 
   sendfile off;
   location / {
-    satisfy all;
-    allow 192.168.56.1;
-    auth_basic "Área restringida";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-
     try_files $uri $uri/ =404;
   }
 
