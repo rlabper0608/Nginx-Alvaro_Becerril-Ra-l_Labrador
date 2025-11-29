@@ -220,6 +220,61 @@ y en el navegador nos saldrá nuevamente la autenticación:
 ![Intento de Login con Doble Requisito](/img/23.Doble_Requisito_conf.png)
 
 
+### 6.Acceso seguro con Nginx.
+
+Para poder establecer una conexión segura (HTTPS), primero deberemos instalar y configurar el cortafuegos. Esto lo haremos en la provisión de nuestra máquina virtual de la siguiente forma:
+
+![Instalación servicio UFW](/img/25.UFW.png)
+
+Primero instalaremos dicho servicio, añadiendolo a la lista que ya teniamos previamente.
+
+Después, en la primera línea, activaremos UFW de forma forzada, para evitar posibles preguntas de confirmación. Una vez habilitado, permitiremos la conexión ssh, habilitaremos la escucha de puertos 80 y 443 (Http,Https) y , por si pudiera dar algún error, desactivamos la escucha de HTTP para evitar duplicidad.
+
+Lo siguiente será comprobar su estado para ver que todo está correcto, nos proporcionará esta salida :
+
+![Status UFW](/img/26.statusUFW.png)
+
+
+#### 6.1 Generación Certificado SSL
+
+Generar un certificado SSL es una tarea,bastante simple. Para su instalación, deberemos agregar las siguientes lineas a nuestra provisión :
+
+```bash
+openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 -keyout /etc/ssl/private/192-168-56-10.alvaro.nip.io.key \
+  -out /etc/ssl/certs/192-168-56-10.alvaro.nip.io.crt \
+  -subj "/C=ES/ST=Granada/L=Granada/O=MiEmpresa/OU=IT/CN=192-168-56-10.alvaro.nip.io"
+```
+
+Donde lo más importante será el archivo (final de las rutas de keyout y out) donde guardaremos dicha key privada y su certificado, siendo el nombre del dominio (en mi caso, al usar nip, es ese) y .key o .crt respectivamente.
+
+Otro dato a destacar es el Common Name (CN), que es imprescindible que sea el nombre de nuestro dominio.
+
+#### 6.2 Configuración HTTPS en Nginx
+
+Para poder aplicar el certificado a nuestro sitio web, deberemos modificar el bloque server de la siguiente manera:
+
+![Configuración HTTPS](/img/27.Conf_Https.png)
+
+En primer lugar, abriremos el puerto 443, que es el puerto estándar de HTTPS, con la directiva listen 443 ssl.
+Lo demás lo dejamos todo igual salvo que añadimos las directivas necesarias para configurar el certificado SSL, indicando la ruta relativa al certificado y la key privada respectivamente.
+
+Por último, con ssl_protocols definimos las versiones de TLS que permitimos y con ssl_ciphers definimos los algoritmos de cifrado.
+
+#### 6.3 Comprobación de HTTPS
+
+Una vez realizado ambos pasos anteriores de manera correcta, nos meteremos al dominio de nuestra web con el protocolo HTTPS, en mi caso, https://192-168-56-10.alvaro.nip.io .
+
+El navegador nos lanzará una advertencia, indicando que dicha conexión no es privada, esto se debe a que el certificado es autofirmado :
+
+![Advertencia Nav](/img/28.Advertencia_nav.png)
+
+Pero si hacemos click en el enlace "Acceder a 192-168-56-10.alvaro.nip.io (sitio no seguro)", nos llevará a nuestra web :
+
+![Web con protocolo HTTPS](/img/29.Web_HTTPS.png)
+
+
+
 
 
 
