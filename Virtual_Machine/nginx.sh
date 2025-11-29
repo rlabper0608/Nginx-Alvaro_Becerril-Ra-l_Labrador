@@ -5,7 +5,13 @@ set -xeu
 apt-get update
 
 
-apt-get -y install nginx git openssl
+apt-get -y install nginx git openssl ufw
+
+ufw allow ssh
+ufw allow 'Nginx Full'
+ufw delete allow 'Nginx HTTP'
+
+ufw status
 
 sh -c "echo -n 'alvaro:' >> /etc/nginx/.htpasswd"
 sh -c "openssl passwd -apr1 'alvaropass'>> /etc/nginx/.htpasswd"
