@@ -7,6 +7,8 @@ apt-get update
 
 apt-get -y install nginx git openssl ufw
 
+ufw --force enable
+
 ufw allow ssh
 ufw allow 'Nginx Full'
 ufw delete allow 'Nginx HTTP'
