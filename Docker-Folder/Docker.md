@@ -158,6 +158,9 @@ Ahora tenemos que entrar a la carpera y ejecutar el siguiente comando `docker ru
 Y obtendremos el siguiente resultado:
 ![VagrantFile](/img/Docker-img/ejecutar-autofirmado.png)
 
+Para configurar el certificado he puesto el siguiente comando: 
+`docker run --rm -v $(pwd):/certs -e SSL_COUNTRY=ES -e SSL_STATE=Granada -e SSL_LOCALITY=Granada -e SSL_ORGANIZATION="raul.test" -e SSL_ORGANIZATIONAL_UNIT=IT -e SSL_COMMON_NAME="raul.test" stakater/ssl-certs-generator`
+
 ## 4. Configuración
 Añado una nueva sección de server con el código propuesto en la práctica, pero modifcado para que tenga mis archivos, por tanto quedaría de la siguiente forma:
 ![VagrantFile](/img/Docker-img/nginx-conf-4.png)
@@ -172,3 +175,8 @@ Ahora cuando nos vamos al enlace `http://raul.test/` vemos lo siguiente:
 ![VagrantFile](/img/Docker-img/nginx-enlace-4.png)
 
 ## 5. Docker Compose
+Vamos a modificar nuestro archivo docker-compose.yml para que podamos ejecutar el contendor con Docker Compose.
+
+
+He tenido varios problemas, que han ido saliendo poco a poco y los he ido arreglando con forme avanzaba en el proyecto, por ejemplo, al hacer el comando de creación del certificado, he tenido que cambiar el nombre de dos archivos, para que funcionase que son `key.pem` y `cert.pem`, además de esto, he tenido algún problema más con las direcciones IP, que teniamos filtradas, pero la página funciona correctamente.
+Aparte de esto, cuando entro a la página de raul.test con HTTPS me dice que el sitio no es seguro, porque el certificado es autofirmado, pero funciona, y ya de por la de HTTP, va perfecta. 
