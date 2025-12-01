@@ -136,3 +136,13 @@ Tenemos que cambiar el archivo de configuración para que el acceso solo sea pos
 ![VagrantFile](/img/Docker-img/nginx-conf-autenticacion-ip-3.png)
 
 Básicamente es muy parecido a lo que teniamos antes, donde estamos filtrando las IP y seguimos teniendo la línea de autenticación de usuarios y contraseñas.
+
+# Práctica 2.3: Acceso seguro con Nginx
+## 1. Introducción
+### 1.1. Prerequisitos
+En esta práctica voy a usar el servico de nip.io, como en las prácticas anteriores, para ir viendo el resultado de la práctica.
+
+## 2. Configuración de Nginx 
+### 2.1. Nombre de servidor
+Tenemos que añadir una modificación al archivo de la configuración de Nginx, el cual es meter al dirección en el apartado de `server_name`, donde en mi caso es: `127-0-0-1.raul.test.nip.io`, y el archivo de configuración se quedaría de así: 
+![VagrantFile](/img/Docker-img/nginx-conf-nombre-servidor.png)
