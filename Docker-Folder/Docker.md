@@ -176,7 +176,8 @@ Ahora cuando nos vamos al enlace `http://raul.test/` vemos lo siguiente:
 
 ## 5. Docker Compose
 Vamos a modificar nuestro archivo docker-compose.yml para que podamos ejecutar el contendor con Docker Compose.
-
+![VagrantFile](/img/Docker-img/docker-compose-4.png)
 
 He tenido varios problemas, que han ido saliendo poco a poco y los he ido arreglando con forme avanzaba en el proyecto, por ejemplo, al hacer el comando de creación del certificado, he tenido que cambiar el nombre de dos archivos, para que funcionase que son `key.pem` y `cert.pem`, además de esto, he tenido algún problema más con las direcciones IP, que teniamos filtradas, pero la página funciona correctamente.
 Aparte de esto, cuando entro a la página de raul.test con HTTPS me dice que el sitio no es seguro, porque el certificado es autofirmado, pero funciona, y ya de por la de HTTP, va perfecta. 
+Por último añadir, que he cambiado de archivo de configuración en medio de la práctica por una confusión, pero tengo ambos subidos. 
