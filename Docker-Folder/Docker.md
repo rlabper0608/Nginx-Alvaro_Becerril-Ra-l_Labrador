@@ -146,3 +146,29 @@ En esta práctica voy a usar el servico de nip.io, como en las prácticas anteri
 ### 2.1. Nombre de servidor
 Tenemos que añadir una modificación al archivo de la configuración de Nginx, el cual es meter al dirección en el apartado de `server_name`, donde en mi caso es: `127-0-0-1.raul.test.nip.io`, y el archivo de configuración se quedaría de así: 
 ![VagrantFile](/img/Docker-img/nginx-conf-nombre-servidor.png)
+
+## 3. Generar un certificado autofirmado
+Para esta parte tenemos que empezar descargandonos la imagen para generar el certificado de autofirmado.
+![VagrantFile](/img/Docker-img/descargar-autofirmado.png)
+
+El siguiente paso es crear un directorio para almacenar los certificados, a este directorio le vamos a llamar `certs`, y por tanto la carpeta se quedaría de la siguiente manera:
+![VagrantFile](/img/Docker-img/crear-carpeta-certs.png)
+
+Ahora tenemos que entrar a la carpera y ejecutar el siguiente comando `docker run -v .:/certs stakater/ssl-certs-generator` 
+Y obtendremos el siguiente resultado:
+![VagrantFile](/img/Docker-img/ejecutar-autofirmado.png)
+
+## 4. Configuración
+Añado una nueva sección de server con el código propuesto en la práctica, pero modifcado para que tenga mis archivos, por tanto quedaría de la siguiente forma:
+![VagrantFile](/img/Docker-img/nginx-conf-4.png)
+
+### 4.1 Mapeo de puertos y montaje de volumen con los certificados
+Tenemos que crear tres archivos para poder seguir con la práctica, ya que si no nos dará un error al montarlo, estos archivos son `raul.test.conf` dentor de la carpeta `conf`, `raul.test.key` y `raul.test.crt` dentro de la carpeta `certs`.
+
+En este paso tengo que ejecutar el siguiente bloque de comandos (en mi caso lo he dejado en una línea): 
+![VagrantFile](/img/Docker-img/nginx-comandos-4.png)
+
+Ahora cuando nos vamos al enlace `http://raul.test/` vemos lo siguiente:
+![VagrantFile](/img/Docker-img/nginx-enlace-4.png)
+
+## 5. Docker Compose
