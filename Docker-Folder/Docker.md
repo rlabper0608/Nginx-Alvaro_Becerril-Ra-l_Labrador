@@ -144,7 +144,7 @@ En esta práctica voy a usar el servico de nip.io, como en las prácticas anteri
 
 ## 2. Configuración de Nginx 
 ### 2.1. Nombre de servidor
-Tenemos que añadir una modificación al archivo de la configuración de Nginx, el cual es meter al dirección en el apartado de `server_name`, donde en mi caso es: `127-0-0-1.raul.test.nip.io`, y el archivo de configuración se quedaría de así: 
+Tenemos que añadir una modificación al archivo de la configuración de Nginx, el cual es meter al dirección en el apartado de `server_name`, donde en mi caso es: `127-0-0-1.raul.test.nip.io`, y el archivo de configuración se quedaría de así (de momento): 
 ![VagrantFile](/img/Docker-img/nginx-conf-nombre-servidor.png)
 
 ## 3. Generar un certificado autofirmado
